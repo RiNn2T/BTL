@@ -1185,22 +1185,22 @@
                             <h2 class="section-title">Hình Ảnh Xe Limousine</h2>
                             <div class="gallery-grid">
                                 <div class="gallery-item">
-                                    <img src="https://statics.vinpearl.com/mercedes-v-class-limousine-1_1630919062.jpg" alt="Mercedes V-Class Limousine" loading="lazy">
+                                    <img src="https://vedientu.com.vn/wp-content/uploads/2023/09/xe-limousine-ha-noi-thanh-hoa.jpg" loading="lazy">
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="https://ik.imagekit.io/tvlk/blog/2023/01/limousine-noi-that-1.jpg?tr=q-70,c-at_max,w-500,h-300,dpr-2" alt="Nội thất xe limousine" loading="lazy">
+                                    <img src="https://sonhailimousine.com/upload/filemanager/xe-limousine-bao-nhieu-cho%20(5).jpg" alt="Nội thất xe limousine" loading="lazy">
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="https://cdn3.ivivu.com/2023/10/limousine-da-lat-ivivu-1.jpg" alt="Xe limousine tại Đà Lạt" loading="lazy">
+                                    <img src="https://nhahangdungtien.com/upload_images/images/23/11/22/4663afcf8d5cbb19f1246d024663_limousine-di-cam-pha-ha-long-quang-ninh-1.jpg" alt="Xe limousine tại Đà Lạt" loading="lazy">
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="https://statics.vinpearl.com/limousine-sprinter-1_1630919062.jpg" alt="Mercedes Sprinter Limousine" loading="lazy">
+                                    <img src="https://huyhoanggroup.net/web/image/14219-31497b77/xe-limousine-la-gi-4.jpg?access_token=b57f0f05-f067-4e53-91e6-36e33fe66f86" alt="Mercedes Sprinter Limousine" loading="lazy">
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="https://ik.imagekit.io/tvlk/blog/2023/01/limousine-da-lat-2.jpg?tr=q-70,c-at_max,w-500,h-300,dpr-2" alt="Xe limousine tại thác Datanla" loading="lazy">
+                                    <img src="https://xevietnam.com/wp-content/uploads/2020/07/5.jpg" alt="Xe limousine tại thác Datanla" loading="lazy">
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="https://cdn3.ivivu.com/2023/10/limousine-da-lat-ivivu-2.jpg" alt="Tài xế limousine chuyên nghiệp" loading="lazy">
+                                    <img src="https://motogo.vn/wp-content/uploads/2023/03/xe-limousine-ha-noi-mong-cai4.jpg" alt="Tài xế limousine chuyên nghiệp" loading="lazy">
                                 </div>
                             </div>
                         </div>
@@ -1349,7 +1349,7 @@
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="https://ik.imagekit.io/tvlk/blog/2023/01/thue-xe-o-to-da-lat-1.jpg?tr=q-70,c-at_max,w-500,h-300,dpr-2" alt="Thuê Xe Ô Tô Đà Lạt" loading="lazy">
+                            <img src="https://statics.vinpearl.com/thue-xe-tu-lai-ha-noi-1_1691044493.jpg" alt="Thuê Xe Ô Tô Đà Lạt" loading="lazy">
                             <div class="service-badge">Tự lái</div>
                         </div>
                         <div class="service-info">
@@ -1368,7 +1368,7 @@
                     
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="https://ik.imagekit.io/tvlk/blog/2023/01/thue-xe-may-da-lat-1.jpg?tr=q-70,c-at_max,w-500,h-300,dpr-2" alt="Thuê Xe Máy Đà Lạt" loading="lazy">
+                            <img src="https://thuexere.com.vn/Data/images/Kinh-nghiem-kinh-doanh-xe-may.jpg" alt="Thuê Xe Máy Đà Lạt" loading="lazy">
                             <div class="service-badge">Tiết kiệm</div>
                         </div>
                         <div class="service-info">
@@ -1387,7 +1387,7 @@
                     
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="https://cdn3.ivivu.com/2023/10/taxi-da-lat-ivivu-1.jpg" alt="Taxi Đà Lạt" loading="lazy">
+                            <img src="https://statics.vinpearl.com/taxi-ha-noi-5_1692519330.jpg" alt="Taxi Đà Lạt" loading="lazy">
                             <div class="service-badge">Tiện lợi</div>
                         </div>
                         <div class="service-info">
@@ -1651,7 +1651,9 @@
         if ('loading' in HTMLImageElement.prototype) {
             const lazyImages = document.querySelectorAll('img[loading="lazy"]');
             lazyImages.forEach(img => {
+                if (img.dataset.src) {
                 img.src = img.dataset.src;
+                }
             });
         } else {
             const lazyImages = document.querySelectorAll('img[loading="lazy"]');
