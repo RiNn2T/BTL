@@ -1185,22 +1185,22 @@
                             <h2 class="section-title">Hình Ảnh Xe Buýt Du Lịch</h2>
                             <div class="gallery-grid">
                                 <div class="gallery-item">
-                                    <img src="https://ik.imagekit.io/tvlk/blog/2023/01/xe-buyt-du-lich-da-lat-2.jpg?tr=q-70,c-at_max,w-500,h-300,dpr-2" alt="Xe buýt du lịch Đà Lạt" loading="lazy">
+                                    <img src="https://cdn2.tuoitre.vn/thumb_w/480/2022/1/24/logo-dji0747-1643016321420646742663.jpg" alt="Xe buýt du lịch Đà Lạt" loading="lazy">
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="https://statics.vinpearl.com/xe-buyt-du-lich-da-lat-1_1630919062.jpg" alt="Nội thất xe buýt" loading="lazy">
+                                    <img src="https://media.vov.vn/sites/default/files/styles/large/public/2023-05/0217-epi-bus-journey_banner-1101.jpeg" alt="Nội thất xe buýt" loading="lazy">
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="https://cdn3.ivivu.com/2023/10/xe-buyt-du-lich-da-lat-ivivu-1.jpg" alt="Xe buýt tại điểm đón" loading="lazy">
+                                    <img src="https://transerco.com.vn/FileUpload/Images/_dsc1838.JPG" alt="Xe buýt tại điểm đón" loading="lazy">
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="https://ik.imagekit.io/tvlk/blog/2023/01/xe-buyt-du-lich-da-lat-3.jpg?tr=q-70,c-at_max,w-500,h-300,dpr-2" alt="Hành khách lên xe" loading="lazy">
+                                    <img src="https://photo-cms-nhandan.epicdn.me/w800/Uploaded/2022/hutmhz/2022_08_27/a2xebuythue-2258.jpeg" alt="Hành khách lên xe" loading="lazy">
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="https://cdn3.ivivu.com/2023/10/xe-buyt-du-lich-da-lat-ivivu-2.jpg" alt="Xe buýt tại thác Datanla" loading="lazy">
+                                    <img src="https://media.vneconomy.vn/images/upload/2025/03/19/hop-on-hop-off-4-1704385902.jpg" alt="Xe buýt tại thác Datanla" loading="lazy">
                                 </div>
                                 <div class="gallery-item">
-                                    <img src="https://statics.vinpearl.com/xe-buyt-du-lich-da-lat-2_1630919062.jpg" alt="Nhân viên hướng dẫn" loading="lazy">
+                                    <img src="https://cms.vn-sightseeing.com/uploads/440_A9_F5_D_6_C5_B_4570_A6_E2_78_AC_464164_BA_a47b6d8871.jpeg" alt="Nhân viên hướng dẫn" loading="lazy">
                                 </div>
                             </div>
                         </div>
@@ -1366,7 +1366,7 @@
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="https://ik.imagekit.io/tvlk/blog/2023/01/thue-xe-o-to-da-lat-1.jpg?tr=q-70,c-at_max,w-500,h-300,dpr-2" alt="Thuê Xe Ô Tô Đà Lạt" loading="lazy">
+                            <img src="https://bizweb.dktcdn.net/100/387/186/files/thue-xe-o-to-ha-noi-3-5f4d31db-ea58-494b-834e-7d7c1ed3caf4.jpg?v=1702033500226" alt="Thuê Xe Ô Tô Đà Lạt" loading="lazy">
                             <div class="service-badge">Tự lái</div>
                         </div>
                         <div class="service-info">
@@ -1385,7 +1385,7 @@
                     
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="https://ik.imagekit.io/tvlk/blog/2023/01/thue-xe-may-da-lat-1.jpg?tr=q-70,c-at_max,w-500,h-300,dpr-2" alt="Thuê Xe Máy Đà Lạt" loading="lazy">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnLGMsA6Kpe6frRJyMteP-tD5v7Z3m605NzA&s" alt="Thuê Xe Máy Đà Lạt" loading="lazy">
                             <div class="service-badge">Tiết kiệm</div>
                         </div>
                         <div class="service-info">
@@ -1404,7 +1404,7 @@
                     
                     <div class="service-card">
                         <div class="service-img">
-                            <img src="https://cdn3.ivivu.com/2023/10/taxi-da-lat-ivivu-1.jpg" alt="Taxi Đà Lạt" loading="lazy">
+                            <img src="https://thuexesaigon.net/wp-content/uploads/2019/11/thue-xe-taxi-sai-gon.jpg" alt="Taxi Đà Lạt" loading="lazy">
                             <div class="service-badge">Tiện lợi</div>
                         </div>
                         <div class="service-info">
@@ -1691,7 +1691,9 @@
         if ('loading' in HTMLImageElement.prototype) {
             const lazyImages = document.querySelectorAll('img[loading="lazy"]');
             lazyImages.forEach(img => {
+                if (img.dataset.src) {
                 img.src = img.dataset.src;
+                }
             });
         } else {
             const lazyImages = document.querySelectorAll('img[loading="lazy"]');
