@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tìm hiểu sâu hơn về lịch sử, văn hóa và địa lý của Đà Lạt - Thành phố ngàn hoa">
+    <title>Tìm hiểu thêm về Đà Lạt | DalatTravel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Biến màu sắc */
+        :root {
+            --primary-color: #5a4fcf;
+            --secondary-color: #ff6b6b;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --white: #fff;
+            --black: #000;
+            --gray: #777;
+            --light-gray: #eee;
+        }
+
+        /* Global Styles */
+        body {
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background: var(--secondary-color);
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a.active {
+            font-weight: bold;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 15px 0;
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            margin-top: 70px;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+
+        .breadcrumb span {
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .breadcrumb i {
+            margin: 0 8px;
+            font-size: 0.8rem;
+        }
+
+        /* Page Content */
+        .page-content {
+            padding: 80px 0;
+        }
+
+        .history-section, .geography-section, .culture-section {
+            margin-bottom: 60px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .content-text h3 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .content-text p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .content-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .content-image:hover {
+            transform: scale(1.02);
+        }
+
+        .highlight-box {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight-box h4 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .highlight-box ul {
+            margin-left: 20px;
+        }
+
+        .highlight-box ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .highlight-box ul li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: var(--white);
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 30px;
+                transition: all 0.5s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Đà Lạt<span>Travel</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="index.html#about">Giới thiệu</a></li>
+                    <li><a href="index.html#destinations">Điểm đến</a></li>
+                    <li><a href="index.html#cuisine">Ẩm thực</a></li>
+                    <li><a href="index.html#tours">Đặt Tour</a></li>
+                    <li><a href="index.html#transportation">Di chuyển</a></li>
+                    <li><a href="index.html#itinerary">Lịch trình</a></li>
+                    <li><a href="index.html#contact">Liên hệ</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb container">
+        <a href="index.html"><i class="fas fa-home"></i> Trang chủ</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Tìm hiểu thêm </span>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <section class="page-content">
+            <div class="container">
+                <h1 class="section-title text-center">Khám phá sâu hơn về Đà Lạt</h1>
+                
+                <!-- Lịch sử Đà Lạt -->
+                <section class="history-section">
+                    <h2 class="section-title">Lịch sử hình thành</h2>
+                    <div class="content-grid">
+                        <div class="content-text">
+                            <h3>Từ phát hiện đến hình thành</h3>
+                            <p>Đà Lạt được phát hiện vào năm 1893 bởi bác sĩ Alexandre Yersin, một nhà thám hiểm người Pháp gốc Thụy Sĩ. Ông đã khám phá ra vùng đất cao nguyên này trong một chuyến thám hiểm tìm đường bộ từ Sài Gòn ra bờ biển Trung Kỳ.</p>
+                            <p>Năm 1897, Toàn quyền Đông Dương Paul Doumer quyết định xây dựng Đà Lạt thành một trung tâm nghỉ dưỡng cho người Pháp tại Đông Dương. Đến năm 1916, Đà Lạt chính thức được thành lập theo nghị định của Toàn quyền Đông Dương.</p>
+                            <a href="#history-more" class="btn">Xem chi tiết lịch sử</a>
+                        </div>
+                        <div class="content-image">
+                            <img src="https://yersin.edu.vn/wp-content/uploads/2024/05/Bac-si-Yersin.jpg" alt="Bác sĩ Alexandre Yersin - Người phát hiện Đà Lạt" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-box" id="history-more">
+                        <h4>Các mốc lịch sử quan trọng của Đà Lạt</h4>
+                        <ul>
+                            <li><strong>1893:</strong> Alexandre Yersin khám phá cao nguyên Lâm Viên</li>
+                            <li><strong>1897:</strong> Toàn quyền Paul Doumer quyết định xây dựng Đà Lạt</li>
+                            <li><strong>1916:</strong> Đà Lạt chính thức được thành lập</li>
+                            <li><strong>1920-1945:</strong> Thời kỳ phát triển mạnh với nhiều công trình kiến trúc Pháp</li>
+                            <li><strong>1954:</strong> Trở thành thủ phủ của Hoàng triều Cương thổ dưới thời Bảo Đại</li>
+                            <li><strong>1975:</strong> Giải phóng Đà Lạt, trở thành tỉnh lỵ của Lâm Đồng</li>
+                            <li><strong>1999:</strong> Được công nhận là đô thị loại I trực thuộc tỉnh</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- Địa lý & Khí hậu -->
+                <section class="geography-section">
+                    <h2 class="section-title">Địa lý & Khí hậu</h2>
+                    <div class="content-grid">
+                        <div class="content-image">
+                            <img src="https://live.staticflickr.com/7659/17103511870_019a1769b0_h.jpg" alt="Toàn cảnh Đà Lạt" loading="lazy">
+                        </div>
+                        <div class="content-text">
+                            <h3>Vị trí địa lý đặc biệt</h3>
+                            <p>Đà Lạt nằm trên cao nguyên Lâm Viên, thuộc vùng Tây Nguyên, Việt Nam, với độ cao trung bình 1.500m so với mực nước biển. Thành phố được bao quanh bởi các ngọn núi và rừng thông bạt ngàn.</p>
+                            <p>Địa hình Đà Lạt khá đa dạng với nhiều đồi núi, thung lũng và hồ nước tự nhiên. Đặc biệt, thành phố có nhiều hồ nhân tạo được tạo ra từ thời Pháp như Hồ Xuân Hương, Hồ Than Thở...</p>
+                            <a href="#climate-more" class="btn">Tìm hiểu khí hậu</a>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-box" id="climate-more">
+                        <h4>Đặc điểm khí hậu độc đáo</h4>
+                        <div class="content-grid">
+                            <div>
+                                <p>Đà Lạt có khí hậu ôn đới với nhiệt độ trung bình năm khoảng 18-21°C, là một trong số ít nơi ở Việt Nam có khí hậu mát mẻ quanh năm.</p>
+                                <p>Thành phố có hai mùa rõ rệt: mùa mưa từ tháng 5 đến tháng 10 và mùa khô từ tháng 11 đến tháng 4 năm sau. Độ ẩm trung bình khoảng 82%.</p>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li><strong>Nhiệt độ cao nhất:</strong> 25-28°C (tháng 3-4)</li>
+                                    <li><strong>Nhiệt độ thấp nhất:</strong> 10-12°C (tháng 12-1)</li>
+                                    <li><strong>Lượng mưa trung bình:</strong> 1.750mm/năm</li>
+                                    <li><strong>Số giờ nắng:</strong> ~2.000 giờ/năm</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Văn hóa & Con người -->
+                <section class="culture-section">
+                    <h2 class="section-title">Văn hóa & Con người</h2>
+                    <div class="content-grid">
+                        <div class="content-text">
+                            <h3>Nét văn hóa đặc trưng</h3>
+                            <p>Đà Lạt là sự pha trộn độc đáo giữa văn hóa bản địa của các dân tộc Tây Nguyên và văn hóa Pháp từ thời thuộc địa. Thành phố này còn là nơi hội tụ của nhiều cộng đồng dân cư từ khắp mọi miền đất nước.</p>
+                            <p>Kiến trúc Đà Lạt mang đậm phong cách châu Âu với những biệt thự cổ, nhà thờ, trường học được xây dựng từ đầu thế kỷ 20. Đặc biệt, Đà Lạt còn nổi tiếng với văn hóa cà phê và nghệ thuật đường phố.</p>
+                            <a href="#culture-more" class="btn">Khám phá thêm</a>
+                        </div>
+                        <div class="content-image">
+                            <img src="https://baolamdong.vn/file/e7837c02845ffd04018473e6df282e92/dataimages/201310/original/images938149_DSC_0728.JPG" alt="Văn hóa Đà Lạt" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-box" id="culture-more">
+                        <h4>Những nét văn hóa đặc sắc của Đà Lạt</h4>
+                        <div class="content-grid">
+                            <div>
+                                <h5>Văn hóa ẩm thực</h5>
+                                <ul>
+                                    <li>Bánh ướt lòng gà - món ăn sáng đặc trưng</li>
+                                    <li>Bánh căn - món ăn vặt nổi tiếng</li>
+                                    <li>Lẩu gà lá é - hương vị độc đáo</li>
+                                    <li>Rau củ Đà Lạt - tươi ngon, đa dạng</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>Lễ hội truyền thống</h5>
+                                <ul>
+                                    <li>Lễ hội hoa Đà Lạt (tổ chức 2 năm/lần)</li>
+                                    <li>Lễ hội rượu vang (tháng 12)</li>
+                                    <li>Lễ hội dân tộc Tây Nguyên</li>
+                                    <li>Festival khinh khí cầu</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>Nghệ thuật & Giải trí</h5>
+                                <ul>
+                                    <li>Văn hóa cà phê - hàng trăm quán độc đáo</li>
+                                    <li>Nghệ thuật đường phố - các bức tường graffiti</li>
+                                    <li>Âm nhạc - các phòng trà, quán acoustic</li>
+                                    <li>Nhiếp ảnh - thiên đường của các nhiếp ảnh gia</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>Kiến trúc đặc trưng</h5>
+                                <ul>
+                                    <li>Biệt thự Pháp cổ</li>
+                                    <li>Nhà ga Đà Lạt - nhà ga cổ đẹp nhất Đông Dương</li>
+                                    <li>Trường Cao đẳng Sư phạm Đà Lạt</li>
+                                    <li>Nhà thờ Con Gà</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Thông tin thêm -->
+                <section class="more-info">
+                    <h2 class="section-title">Thông tin hữu ích</h2>
+                    <div class="highlight-box">
+                        <h4>Những điều thú vị về Đà Lạt</h4>
+                        <div class="content-grid">
+                            <div>
+                                <h5>Danh hiệu & Giải thưởng</h5>
+                                <ul>
+                                    <li>Thành phố Festival hoa Việt Nam</li>
+                                    <li>Thành phố bền vững về môi trường ASEAN</li>
+                                    <li>Top 10 điểm đến hấp dẫn nhất châu Á (tạp chí Travel + Leisure)</li>
+                                    <li>Thành phố đáng sống nhất Việt Nam</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>Con số ấn tượng</h5>
+                                <ul>
+                                    <li>Diện tích: 394,64 km²</li>
+                                    <li>Dân số: ~250.000 người</li>
+                                    <li>Độ cao trung bình: 1.500m</li>
+                                    <li>Số lượng hồ: trên 16 hồ lớn nhỏ</li>
+                                    <li>Số lượng biệt thự Pháp cổ: hơn 1.500 căn</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Về chúng tôi</h3>
+                    <p>DalatTravel là trang thông tin du lịch Đà Lạt uy tín, cung cấp thông tin chính xác và hữu ích cho du khách.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Zalo"><i class="fab fa-weixin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Liên kết nhanh</h3>
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="index.html#about">Giới thiệu Đà Lạt</a></li>
+                        <li><a href="index.html#destinations">Điểm du lịch</a></li>
+                        <li><a href="index.html#cuisine">Ẩm thực</a></li>
+                        <li><a href="index.html#tours">Đặt Tour</a></li>
+                        <li><a href="index.html#transportation">Di chuyển</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Dịch vụ</h3>
+                    <ul>
+                        <li><a href="index.html#tours">Tour du lịch</a></li>
+                        <li><a href="index.html#transportation">Thuê xe du lịch</a></li>
+                        <li><a href="#">Đặt phòng khách sạn</a></li>
+                        <li><a href="#">Hướng dẫn viên</a></li>
+                        <li><a href="#">Đặt bàn nhà hàng</a></li>
+                        <li><a href="#">Vé tham quan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Hỗ trợ</h3>
+                    <ul>
+                        <li><a href="#">Câu hỏi thường gặp</a></li>
+                        <li><a href="#">Hướng dẫn đặt tour</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                        <li><a href="#">Liên hệ hợp tác</a></li>
+                        <li><a href="#">Góp ý dịch vụ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DalatTravel. Bảo lưu mọi quyền.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTopBtn = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Lazy loading images
+        if ('loading' in HTMLImageElement.prototype) {
+            // Browser supports lazy loading
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            lazyImages.forEach(img => {
+                if (img.dataset.src) {
+                img.src = img.dataset.src;
+                }
+            });
+        } else {
+            // Fallback for browsers that don't support lazy loading
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            lazyImages.forEach(img => {
+                observer.observe(img);
+            });
+        }
+    </script>
+</body>
+</html>
